@@ -1,8 +1,8 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO PointCloudLibrary/pcl
-    REF "pcl-${VERSION}"
-    SHA512 8e2d2839fe73a955d49b9a72861de2becf2da9a0dc906bd10ab8a3518e270a2f1900d801922d02871d704f2ed380273d35c2d0e04d8da7e24a21eb351c43c00b
+    REF "pcl-${VERSION}-rc1"
+    SHA512 63dfc08cf0c93e6ca9bc45e402d8332f56474f1607004dedb7e3e5d4210796f8ceb4ffd734ab63522daab114df65fc4807f36a935a5a1401b19431f06eb6afc9
     HEAD_REF master
     PATCHES
         add-gcc-version-check.patch
@@ -11,11 +11,6 @@ vcpkg_from_github(
         install-layout.patch
         install-examples.patch
         fix-clang-cl.patch
-        gh-5985-inline.patch
-        io_ply.patch
-        6053.diff # https://github.com/PointCloudLibrary/pcl/pull/6053
-        6990a3b0d7dd3c1ca04a1a473cc172a937418060.diff # https://github.com/PointCloudLibrary/pcl/pull/6105
-        0012-msvc-optimizer-workaround.patch # backport pcl #6143 and #6154
 )
 
 string(COMPARE EQUAL "${VCPKG_LIBRARY_LINKAGE}" "dynamic" PCL_SHARED_LIBS)
